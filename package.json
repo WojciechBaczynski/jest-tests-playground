@@ -1,0 +1,22 @@
+{
+  "name": "beersearch",
+  "version": "1.0.0",
+  "description": "Simple beer search app inspired by Netguru recrutation task",
+  "main": "index.js",
+  "scripts": {
+    "test:unit": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WojciechBaczynski/jest-tests-playground.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WojciechBaczynski/jest-tests-playground/issues"
+  },
+  "homepage": "https://github.com/WojciechBaczynski/jest-tests-playground#readme",
+  "dependencies": {
+    "jest": "^24.7.1"
+  }
+}
