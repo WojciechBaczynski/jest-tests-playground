@@ -12,14 +12,14 @@ function findByAbv(abvOption) {
 
 function loadNextPageOnScrollBottom() {
     const scrollAtBottom = window.innerHeight + window.pageYOffset + 20 >= document.body.scrollHeight;
-    if(scrollAtBottom) {
+    if (scrollAtBottom) {
         pageCounter++;
         loadBeers();
     }
 }
 
 function createAbvParameter(option) {
-    switch(option) {
+    switch (option) {
         case 1:
             return `&abv_lt=4`
         case 2:
@@ -39,23 +39,20 @@ function createEndpoint(abv) {
 
 function loadBeers() {
     fetch(createEndpoint(createAbvParameter(abv)))
-    .then(response => response.json())
-    .then((data => {
-        if(data.length === 0) {
-            
-        } else {
-            appendData(data);
-        }
-    }))
+        .then(response => response.json())
+        .then((data => {
+            if (data.length === 0) {
+
+            } else {
+                appendData(data);
+            }
+        }))
 }
 
 function loadOnStart() {
     loadBeers();
     window.addEventListener('scroll', loadNextPageOnScrollBottom);
 }
-
-loadOnStart();
-
 
 function appendData(beers) {
     beers.forEach(beer => {
@@ -87,11 +84,11 @@ function createNameContainer(beer, beerContainer) {
 function createImgContainer(beer, beerContainer) {
     const imgContainer = document.createElement('div');
     imgContainer.classList.add('imgContainer', 'container');
-    
+
     imgContainer.style.backgroundImage = beer.image_url === null
         ? `url("beer.png")`
         : `url(${beer.image_url})`;
-    
+
     beerContainer.appendChild(imgContainer);
 }
 
@@ -105,3 +102,8 @@ function createTagContainer(beer, beerContainer) {
     beerContainer.appendChild(tagContainer);
 }
 
+if (typeof module === "object") {
+    module.exports = {
+        createAbvParameter
+    };
+}
