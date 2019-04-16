@@ -1,0 +1,50 @@
+html,
+body,
+#beersContainer {
+    width: 100%;
+    height: 100%;
+}
+
+#beersContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.beerContainer {
+    display: inline-block;
+    height: 30%;
+}
+
+.nameContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+}
+
+.beerName {
+    align-self: center;
+}
+
+.imgContainer {
+    width: 100%;
+    height: 60%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.tagContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+}
+
+.beerTag {
+    align-self: center;
+}
