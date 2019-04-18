@@ -1,4 +1,4 @@
-const { createAbvParameter, createBeerContainer } = require("./script.js");
+const { createAbvParameter, createBeerContainer, createEndpoint } = require("./script.js");
 
 describe("Beer display module", () => {
     test("1 to be 1", () => {
@@ -33,6 +33,15 @@ describe("Beer display module", () => {
     test("createBeerContainer returns element with correct selectors", () => {
         const result = createBeerContainer().classList.contains('beerContainer');
         expect(result).toBeTruthy();
+    });
+
+    test("createEndpoint returns url", () => {
+        expect(createEndpoint()).toBe("https://api.punkapi.com/v2/beers?page=1&per_page=15");
+    });
+
+    test("createEndpoint with argument returns url", () => {
+        const argument = "&abv_lt=4"
+        expect(createEndpoint(argument)).toBe("https://api.punkapi.com/v2/beers?page=1&per_page=15" + argument);
     });
 });
 
