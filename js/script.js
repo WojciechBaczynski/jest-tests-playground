@@ -105,6 +105,7 @@ function createTagContainer(beer, beerContainer) {
 if (typeof module === "object") {
     module.exports = {
         createAbvParameter,
-        createBeerContainer
+        createBeerContainer,
+        createEndpoint
     };
 }
