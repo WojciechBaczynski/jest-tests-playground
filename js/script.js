@@ -97,7 +97,7 @@ function createTagContainer(beer, beerContainer) {
     const beerTag = document.createElement('span');
     tagContainer.classList.add('tagContainer', 'container');
     beerTag.classList.add('beerTag');
-    beerTag.innerText = beer.tagline;
+    beerTag.textContent = beer.tagline;
     tagContainer.appendChild(beerTag);
     beerContainer.appendChild(tagContainer);
 }
@@ -106,6 +106,7 @@ if (typeof module === "object") {
     module.exports = {
         createAbvParameter,
         createBeerContainer,
-        createEndpoint
+        createEndpoint,
+        createNameContainer
     };
 }

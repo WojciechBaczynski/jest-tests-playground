@@ -1,9 +1,6 @@
-const { createAbvParameter, createBeerContainer, createEndpoint } = require("./script.js");
+const { createAbvParameter, createBeerContainer, createEndpoint, createNameContainer } = require("./script.js");
 
 describe("Beer display module", () => {
-    test("1 to be 1", () => {
-        expect(1).toBe(1)
-    });
 
     test("createAbvParameter with selected option 1 returns expected text", () => {
         expect(createAbvParameter(1)).toBe('&abv_lt=4');
@@ -42,6 +39,14 @@ describe("Beer display module", () => {
     test("createEndpoint with argument returns url", () => {
         const argument = "&abv_lt=4"
         expect(createEndpoint(argument)).toBe("https://api.punkapi.com/v2/beers?page=1&per_page=15" + argument);
+    });
+
+    test("createNameContainer changes DOM and display beer name", () => {
+        const beer = { name: "beerName" };
+        const beerContainer = global.document.createElement('div');
+        createNameContainer(beer, beerContainer);
+        expect(beerContainer.innerHTML.toString().includes(beer.name)).toBeTruthy();
+        expect(beerContainer.innerHTML.toString().includes('span')).toBeTruthy();
     });
 });
 
