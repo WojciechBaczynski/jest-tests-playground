@@ -1,4 +1,4 @@
-const { createAbvParameter, createBeerContainer, createEndpoint, createNameContainer } = require("./script.js");
+const { createAbvParameter, createBeerContainer, createEndpoint, createNameContainer, createImgContainer } = require("./script.js");
 
 describe("Beer display module", () => {
 
@@ -47,6 +47,14 @@ describe("Beer display module", () => {
         createNameContainer(beer, beerContainer);
         expect(beerContainer.innerHTML.toString().includes(beer.name)).toBeTruthy();
         expect(beerContainer.innerHTML.toString().includes('span')).toBeTruthy();
+    });
+
+    test("createImgContainer changes DOM, element with class imgContainer is visible and image_url value is inside element", () => {
+        const beer = { image_url: "ulrAddress" };
+        const beerContainer = global.document.createElement('div');
+        createImgContainer(beer, beerContainer);
+        expect(beerContainer.innerHTML.toString().includes(beer.image_url)).toBeTruthy();
+        expect(beerContainer.innerHTML.toString().includes("imgContainer")).toBeTruthy();
     });
 });
 
