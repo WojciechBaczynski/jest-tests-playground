@@ -107,6 +107,7 @@ if (typeof module === "object") {
         createAbvParameter,
         createBeerContainer,
         createEndpoint,
-        createNameContainer
+        createNameContainer,
+        createImgContainer
     };
 }
