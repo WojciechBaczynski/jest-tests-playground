@@ -17,6 +17,12 @@
   },
   "homepage": "https://github.com/WojciechBaczynski/jest-tests-playground#readme",
   "dependencies": {
-    "jest": "^24.7.1"
+    "jest": "^24.7.1",
+    "jest-junit": "^6.4.0"
+  },
+  "jest": {
+    "reporters": [
+      "default", "jest-junit"
+    ]
   }
 }

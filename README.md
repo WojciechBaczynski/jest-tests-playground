@@ -1,5 +1,7 @@
 # BeerSearch
 
+[![CircleCI](https://circleci.com/gh/PeterPorzuczek/jest-tests-playground.svg?style=svg)](https://circleci.com/gh/PeterPorzuczek/jest-tests-playground)
+
 Simple beer search app inspired by Netguru recrutation task
 
 <h1>LIVE</h1>
