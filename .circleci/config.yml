@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/jest-tests-playground
+    docker:
+      - image: circleci/node:10.15.3
+    steps:
+      - checkout
+      - run:
+          name: update-npm
+          command: "sudo npm i -g npm@latest"
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: install-dependencies
+          command: npm i
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: code-coverage
+          command: npm run test:unit -- --collectCoverage=true --ci --runInBand --reporters=default --reporters=jest-junit
+          environment:
+            JEST_JUNIT_OUTPUT: "coverage/results.xml"
+      - store_test_results:
+          path: coverage
+      - store_artifacts:
+          path: coverage
+          prefix: coverage
