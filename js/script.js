@@ -107,14 +107,3 @@ function createTagContainer(beer, beerContainer) {
   tagContainer.appendChild(beerTag);
   beerContainer.appendChild(tagContainer);
 }
-
-if (typeof module === "object") {
-  module.exports = {
-    createAbvParameter,
-    createBeerContainer,
-    createEndpoint,
-    createNameContainer,
-    createImgContainer,
-    createTagContainer
-  };
-}

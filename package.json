@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/WojciechBaczynski/jest-tests-playground#readme",
   "dependencies": {
+    "babel-jest": "^24.8.0",
+    "babel-plugin-rewire": "^1.2.0",
     "jest": "^24.7.1",
     "jest-junit": "^6.4.0"
   },
@@ -25,6 +27,14 @@
     "reporters": [
       "default",
       "jest-junit"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  },
+  "babel": {
+    "plugins": [
+      "babel-plugin-rewire"
     ]
   }
 }
