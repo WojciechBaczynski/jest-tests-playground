@@ -4,7 +4,8 @@
   "description": "Simple beer search app inspired by Netguru recrutation task",
   "main": "index.js",
   "scripts": {
-    "test:unit": "jest"
+    "test:unit": "jest",
+    "test:unit-watch": "npm run test:unit -- --watchAll"
   },
   "repository": {
     "type": "git",

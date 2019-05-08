@@ -39,7 +39,7 @@ describe("Beer display module", () => {
     const result = createBeerContainer().classList.contains("beerContainer");
     expect(result).toBeTruthy();
   });
-
+  
   test("createEndpoint returns url", () => {
     expect(createEndpoint()).toBe(
       "https://api.punkapi.com/v2/beers?page=1&per_page=15"
@@ -70,6 +70,16 @@ describe("Beer display module", () => {
     ).toBeTruthy();
     expect(
       beerContainer.innerHTML.toString().includes("imgContainer")
+    ).toBeTruthy();
+  });
+
+  test("createTagContainer changes DOM and makes element with class beerTag", () => {
+    const beer = { tagline: "randomtextinput1!" };
+    const beerContainer = global.document.createElement("div");
+    createTagContainer(beer, beerContainer);
+    expect(beerContainer.innerHTML.toString().includes("beerTag")).toBeTruthy();
+    expect(
+      beerContainer.innerHTML.toString().includes(beer.tagline)
     ).toBeTruthy();
   });
 });
